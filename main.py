@@ -4,6 +4,7 @@ from tkinter import *
 window = Tk()
 window.title("My first GUI program")
 window.minsize(width=500, height=300)
+window.config(padx=20, pady=20)
 
 # Label
 my_label = Label(text="I'm a label!", font=("Arial", 24))
