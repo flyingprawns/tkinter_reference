@@ -3,11 +3,11 @@ from tkinter import *
 # Create and open GUI window
 window = Tk()
 window.title("My first GUI program")
-window.minsize(width=800, height=500)
+window.minsize(width=500, height=300)
 
 # Label
 my_label = Label(text="I'm a label!", font=("Arial", 24))
-my_label.pack()
+my_label.grid(column=3, row=1)
 
 
 # Button
@@ -16,18 +16,18 @@ def button_click():
 
 
 button = Button(text="Click me!", command=button_click)
-button.pack()
+button.grid(column=3, row=2)
 
 # Entry
 user_input = Entry(width=50)
 user_input.insert(END, string="Type something here, then press the button!")
-user_input.pack()
+user_input.grid(column=3, row=3)
 
 # Text
 text = Text(height=5, width=50)
 text.focus() # puts cursor in textbox
 text.insert(END, "Enter whatever you like inside.")
-text.pack()
+text.grid(column=3, row=4)
 
 
 # Spinbox
@@ -36,7 +36,7 @@ def spinbox_used():
 
 
 spinbox = Spinbox(from_=0, to=10, width=5, command=spinbox_used)
-spinbox.pack()
+spinbox.grid(column=1, row=2)
 
 
 # Scale
@@ -45,7 +45,7 @@ def scale_used(value):
 
 
 scale = Scale(from_=0, to=100, command=scale_used)
-scale.pack()
+scale.grid(column=1, row=4)
 
 
 # Checkbutton
@@ -55,7 +55,7 @@ def checkbutton_used():
 
 checked_state = IntVar()
 checkbutton = Checkbutton(text="Is On?", variable=checked_state, command=checkbutton_used)
-checkbutton.pack()
+checkbutton.grid(column=5, row=1)
 
 
 # Radiobutton
@@ -66,8 +66,8 @@ def radio_used():
 radio_state = IntVar()
 radiobutton1 = Radiobutton(text="Option1", value=1, variable=radio_state, command=radio_used)
 radiobutton2 = Radiobutton(text="Option2", value=2, variable=radio_state, command=radio_used)
-radiobutton1.pack()
-radiobutton2.pack()
+radiobutton1.grid(column=5, row=3)
+radiobutton2.grid(column=5, row=4)
 
 
 # Listbox
@@ -80,7 +80,9 @@ fruits = ["Apple", "Pear", "Orange", "Banana"]
 for item in fruits:
     listbox.insert(fruits.index(item), item)
 listbox.bind("<<ListboxSelect>>", listbox_used)
-listbox.pack()
+# listbox.pack()
+# listbox.place(x=335, y=410)
+listbox.grid(column=3, row=5)
 
 # Exit GUI window
 window.mainloop()
