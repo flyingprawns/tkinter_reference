@@ -85,5 +85,12 @@ listbox.bind("<<ListboxSelect>>", listbox_used)
 # listbox.place(x=335, y=410)
 listbox.grid(column=3, row=5)
 
+# Image example : tomato image with "timer" text, taken from one of my projects
+tomato_image = PhotoImage(file="tomato.png")
+canvas = Canvas(width=240, height=264, bg=YELLOW, highlightthickness=0)
+canvas.create_image(119, 132, image=tomato_image)
+timer_text = canvas.create_text(119, 152, text="0:00", fill="white", font=(FONT_NAME_TIMER, 35, "bold"))
+canvas.grid(row=2, column=2)
+
 # Exit GUI window
 window.mainloop()
